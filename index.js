@@ -55,7 +55,7 @@ app.get('/', (req, res) =>
 	res
 		.status(200)
 		.send(
-			`TU MATTE MON CODE FILS DE PUTE ?`,
+			`Sah ntm un peut nn ? t'es la tu va sur le site des autres a essayer de trouver mon bordel, ntm ?`,
 		),
 );
 
@@ -68,7 +68,7 @@ app.get('/embed', (req, res) => {
 	)
 		return res
 			.status(400)
-			.send('Invalid image type specified\nType: "image" or "thumbnail"');
+			.send('ton image elle pue frr');
 	const {
 		provider_name,
 		provider_url,
@@ -192,7 +192,7 @@ app.get('/embed', (req, res) => {
 		redirectMeta.setAttribute('content', `0; url=${redirect}`);
 		document.head.appendChild(redirectMeta);
 	}
-	document.body.innerHTML = `<p>Copy <a href="" id="url">this URL</a> to Discord Message</p><p>Github: https://github.com/aiko-chan-ai/WebEmbed</p>`;
+	document.body.innerHTML = `<p>non non la parcontre, nique bien ta mere la pute, t'es la tu vient sur mon site et en plus tu cherche a savoir c'est quoi, non ntm vrmt t'es une merde une chiasse, ptite pute va</p>`;
 	const script = document.createElement('script');
 	script.textContent = "(function () { const a = document.getElementById('url'); a.setAttribute('href', window.location.href) })();";
 	document.body.appendChild(script);
@@ -211,9 +211,9 @@ app.get('/oembed', (req, res) => {
 
 app.use(function (req, res) {
 	res.status(404).send({
-		msg: 'URL not found',
+		msg: 'pas trv ton url guez la',
 		code: 404,
-		data: req.originalUrl + ' is incorrect',
+		data: req.originalUrl + ' C ENCORE INCORRECT',
 	});
 });
 

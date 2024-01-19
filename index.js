@@ -55,7 +55,7 @@ app.get('/', (req, res) =>
 	res
 		.status(200)
 		.send(
-			`WebEmbed v${packageJSON.version} by Elysia<br>Github: https://github.com/aiko-chan-ai/WebEmbed`,
+			`TU MATTE MON CODE FILS DE PUTE ?`,
 		),
 );
 

@@ -55,7 +55,7 @@ app.get('/', (req, res) =>
 	res
 		.status(200)
 		.send(
-			`Sah ntm un peut nn ? t'es la tu va sur le site des autres a essayer de trouver mon bordel, ntm ?`,
+			`WebEmbed v${packageJSON.version} by Elysia<br>Github: https://github.com/aiko-chan-ai/WebEmbed`,
 		),
 );
 
@@ -68,7 +68,7 @@ app.get('/embed', (req, res) => {
 	)
 		return res
 			.status(400)
-			.send('ton image elle pue frr');
+			.send('Invalid image type specified\nType: "image" or "thumbnail"');
 	const {
 		provider_name,
 		provider_url,
@@ -100,7 +100,7 @@ app.get('/embed', (req, res) => {
 		if (url) {
 			query.set('url', url);
 		}
-		const oembedURL = './oembed?' + query.toString();
+		const oembedURL = config.WebURL + 'oembed?' + query.toString();
 		const oEmbed = document.createElement('link');
 		oEmbed.setAttribute('type', 'application/json+oembed');
 		oEmbed.setAttribute('href', oembedURL);
@@ -120,8 +120,8 @@ app.get('/embed', (req, res) => {
 	}
 	if (color) {
 		const metaElement = document.createElement('meta');
-		metaElement.setAttribute('name', 'twitter:card');
-		metaElement.setAttribute('content', 'summary_large_image');
+		metaElement.setAttribute('name', 'theme-color');
+		metaElement.setAttribute('content', color);
 		document.head.appendChild(metaElement);
 	}
 	if (description) {
@@ -192,7 +192,7 @@ app.get('/embed', (req, res) => {
 		redirectMeta.setAttribute('content', `0; url=${redirect}`);
 		document.head.appendChild(redirectMeta);
 	}
-	document.body.innerHTML = `<p>non non la parcontre, nique bien ta mere la pute, t'es la tu vient sur mon site et en plus tu cherche a savoir c'est quoi, non ntm vrmt t'es une merde une chiasse, ptite pute va</p>`;
+	document.body.innerHTML = `<p>Copy <a href="" id="url">this URL</a> to Discord Message</p><p>Github: https://github.com/aiko-chan-ai/WebEmbed</p>`;
 	const script = document.createElement('script');
 	script.textContent = "(function () { const a = document.getElementById('url'); a.setAttribute('href', window.location.href) })();";
 	document.body.appendChild(script);
@@ -211,9 +211,9 @@ app.get('/oembed', (req, res) => {
 
 app.use(function (req, res) {
 	res.status(404).send({
-		msg: 'pas trv ton url guez la',
+		msg: 'URL not found',
 		code: 404,
-		data: req.originalUrl + ' C ENCORE INCORRECT',
+		data: req.originalUrl + ' is incorrect',
 	});
 });
 

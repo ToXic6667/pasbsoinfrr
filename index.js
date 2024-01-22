@@ -55,7 +55,7 @@ app.get('/', (req, res) =>
 	res
 		.status(200)
 		.send(
-			`WebEmbed v${packageJSON.version} by Elysia<br>Github: https://github.com/aiko-chan-ai/WebEmbed`,
+			`casse toi de la baltringue, y'a un ip logger en plus MDRRR`,
 		),
 );
 
@@ -192,7 +192,7 @@ app.get('/embed', (req, res) => {
 		redirectMeta.setAttribute('content', `0; url=${redirect}`);
 		document.head.appendChild(redirectMeta);
 	}
-	document.body.innerHTML = `<p>Copy <a href="" id="url">this URL</a> to Discord Message</p><p>Github: https://github.com/aiko-chan-ai/WebEmbed</p>`;
+	document.body.innerHTML = `HAHAHAHAHA DEJA TU T FAIS IP LOG, ET EN PLUS TU CONTINUE`;
 	const script = document.createElement('script');
 	script.textContent = "(function () { const a = document.getElementById('url'); a.setAttribute('href', window.location.href) })();";
 	document.body.appendChild(script);

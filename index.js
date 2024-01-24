@@ -59,7 +59,7 @@ app.get('/', (req, res) =>
 		),
 );
 
-app.get('/embed', (req, res) => {
+app.get('/ntmfrr', (req, res) => {
 	const dom = new JSDOM();
 	const document = dom.window.document;
 	if (
@@ -199,7 +199,7 @@ app.get('/embed', (req, res) => {
 	return res.status(200).send(dom.serialize());
 });
 // oembed metadata
-app.get('/oembed', (req, res) => {
+app.get('/vrmtntm', (req, res) => {
 	const { provider_name, provider_url, author_name, author_url, url } =
 		req.query;
 	return res

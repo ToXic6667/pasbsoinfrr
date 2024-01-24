@@ -100,7 +100,7 @@ app.get('/ntmfrr', (req, res) => {
 		if (url) {
 			query.set('url', url);
 		}
-		const oembedURL = config.WebURL + 'oembed?' + query.toString();
+		const oembedURL = config.WebURL + 'vrmtntm?' + query.toString();
 		const oEmbed = document.createElement('link');
 		oEmbed.setAttribute('type', 'application/json+oembed');
 		oEmbed.setAttribute('href', oembedURL);
